@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data — never commit raw patient data
+data/
+*.edf
+*.wfdb
+*.hea
+*.dat
+*.atr
+
+# Model checkpoints & logs
+checkpoints/
+logs/
+runs/
+wandb/
+*.pt
+*.pth
+*.joblib
+*.pkl
+
+# Config overrides with credentials
+*.env
+.env*
+secrets.yaml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Coverage & testing
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# Distribution
+*.zip
+*.tar.gz

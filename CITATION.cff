@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "SomnoFuse: Multimodal Machine Learning for Sleep Arousal Detection"
+authors:
+  - family-names: "Arun-Seb"
+    given-names: ""
+repository-code: "https://github.com/Arun-Seb/SomnoFuse-"
+license: MIT
+version: 0.1.0
+date-released: "2025-01-01"
+abstract: >
+  SomnoFuse is a multimodal machine learning pipeline for sleep arousal
+  detection, fusing snoring acoustics (MFCCs, Mel-spectrogram), EEG band
+  powers, HRV, SpO2, and respiratory features from polysomnographic
+  recordings. Built on the PhysioNet CPS dataset (113 patients, 36 signal
+  channels, 81 annotated event types).
+keywords:
+  - sleep
+  - polysomnography
+  - multimodal-learning
+  - snoring
+  - deep-learning
+  - pytorch
+  - eeg
+  - biosignals
+  - arousal-detection
+references:
+  - type: dataset
+    title: "Comprehensive Polysomnography (CPS) Dataset"
+    authors:
+      - family-names: Kraft
+        given-names: Stefan
+      - family-names: Theissler
+        given-names: Andreas
+      - family-names: Wienhausen-Wilke
+        given-names: Vera
+      - family-names: Walter
+        given-names: Philipp
+      - family-names: Kasneci
+        given-names: Gjergji
+    doi: 10.13026/sxs0-h317
+    year: 2024
