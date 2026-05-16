@@ -1,0 +1,60 @@
+name: cps_snore_multimodal
+
+data:
+  data_dir: data/raw
+  processed_dir: data/processed
+  train_fold_file: configs/recommended_training_fold.txt
+  test_fold_file: configs/recommended_test_fold.txt
+  sampling_rate: 256
+  window_sec: 30.0
+  hop_sec: 15.0
+  max_patients: null   # null = use all 113
+
+snore:
+  channel: Schnarc
+  pressure_channel: Druck Snore
+  n_mfcc: 13
+  n_fft: 512
+  hop_length: 64
+  n_mels: 64
+  fmin: 20.0
+  fmax: 125.0
+  energy_threshold_db: -40.0
+
+physio:
+  eeg_channels: ["C4:A1", "C3:A2", "F4:A1", "O2:A1"]
+  ecg_channel: "ECG 2"
+  ppg_channel: Pleth
+  spo2_channel: SPO2
+  hrv_window_sec: 300.0
+
+respiratory:
+  airflow_channel: "Druck Flow"
+  thermal_channel: "Flow Th"
+  rip_abdomen: RIP.Abdom
+  rip_thorax: RIP.Thrx
+  apnea_min_duration_sec: 10.0
+  hypopnea_threshold: 0.3
+
+model:
+  model_type: multimodal
+  hidden_dim: 256
+  num_heads: 8
+  num_layers: 4
+  dropout: 0.2
+  num_classes: 9
+
+training:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  scheduler: cosine
+  early_stopping_patience: 10
+  seed: 42
+  device: auto
+  num_workers: 4
+  mixed_precision: true
+  gradient_clip: 1.0
+  checkpoint_dir: checkpoints
+  log_dir: logs
